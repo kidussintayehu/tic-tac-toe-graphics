@@ -13,6 +13,9 @@ CROSS_COLOR = (220, 0, 20)
 
 
 
+    """
+    It draws four lines, two horizontal and two vertical, to create a 3x3 grid
+    """
 def draw_lines():
     # 1 horizontal
     pygame.draw.line(sc.screen, LINE_COLOR, (0, SQUARE_SIZE),

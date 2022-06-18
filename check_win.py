@@ -2,6 +2,14 @@ from constants import *
 from draw_win_line import *
 
 def checkWin(board, player):
+    """
+    It checks if the player has won the game by checking if there are three of the same player's pieces
+    in a row, column, or diagonal.
+    
+    :param board: the board to check for a win
+    :param player: the player who won
+    :return: a boolean value.
+    """
     # vertical win
     for col in range(BOARD_COLS):
         if (board[col] == board[col+3] == board[col+6]):

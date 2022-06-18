@@ -20,6 +20,16 @@ board = [0, 1, 2, 3, 4, 5, 6, 7, 8]
 
 
 def draw_figures(index, row, col):
+    """
+    The function draw_figures() takes in three parameters: index, row, and col. It then checks if the
+    board at the index is an 'O' or an 'X'. If it is an 'O', it calls the draw_circle() function. If it
+    is an 'X', it calls the draw_x() function
+    
+    :param index: the index of the board list that we want to draw
+    :param row: the row number of the board
+    :param col: The column number of the square that was clicked
+    :return: the index of the board.
+    """
     if board[index] == 'O':
 
         draw_cicle(row, col)
@@ -31,6 +41,10 @@ def draw_figures(index, row, col):
 
 
 def restart():
+    """
+    The function restarts the game by filling the screen with the background color, drawing the lines,
+    and resetting the board.
+    """
     sc.screen.fill(BG_COLOR)
     gb.draw_lines()
     for row in range(len(board)):
@@ -43,6 +57,14 @@ gb.draw_lines()
 player = 0
 game_over = False
 
+# This is the main loop of the game. It is constantly checking for events. If the event is a mouse
+# click, it will check if the game is over. If it is not, it will get the mouse coordinates and
+# determine which row and column the mouse is in. It will then call the logic function to determine
+# which index in the board list to change. It will then check if the game is over. If it is, it will
+# display the appropriate message. If it is not, it will call the draw_figures function to draw the
+# appropriate figure. It will then increment the player variable. If the event is a key press, it will
+# check if the key is 'r'. If it is, it will call the restart function to reset the board and set the
+# player variable back to 1. It will then update the display.
 while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:

@@ -1,5 +1,15 @@
 
 def logic(board, row, col, gamer):
+    """
+    The function takes in the board, the row, the column, and the player. It then returns the index of
+    the board that the player chose
+    
+    :param board: the board
+    :param row: The row the player wants to place their piece in
+    :param col: The column number the user wants to place their piece in
+    :param gamer: 1 or 2
+    :return: The index of the board that is being changed.
+    """
 
     choice = row
     if (gamer == 1):
